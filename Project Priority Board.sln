@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project Priority Board", "Project Priority Board\Project Priority Board.csproj", "{DAF8753F-D037-4C98-B679-6C91EA145E1C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DAF8753F-D037-4C98-B679-6C91EA145E1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAF8753F-D037-4C98-B679-6C91EA145E1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAF8753F-D037-4C98-B679-6C91EA145E1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAF8753F-D037-4C98-B679-6C91EA145E1C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,59 @@
+﻿@page "/"
+@rendermode InteractiveServer
+
+<PageTitle>Project Priority Board</PageTitle>
+
+<div class="container">
+    <h1>Project Priority Board</h1>
+    <p>Manage your development projects in priority order.</p>
+    
+    <div class="project-list">
+        @foreach (var project in projects)
+        {
+            var index = projects.IndexOf(project);
+            
+            <ProjectCard
+                ProjectName="@project.Name"
+                Deadline="@project.Deadline"
+                Status="@project.Status"
+                OnMoveUp="@(() => MoveProjectUp(index))"
+                OnMoveDown="@(() => MoveProjectDown(index))" />
+        }
+    </div>
+</div>
+
+@code {
+
+    public class Project
+    {
+        public string Name { get; set; }
+        public string Deadline { get; set; }
+        public string Status { get; set; }
+    }
+
+    
+    private List<Project> projects = new List<Project>
+    {
+        new Project { Name = "Mobile App Redesign", Deadline = "March 15, 2024", Status = "Active" },
+        new Project { Name = "API Documentation", Deadline = "February 28, 2024", Status = "Active" },
+        new Project { Name = "Security Audit", Deadline = "April 10, 2024", Status = "Planning" },
+        new Project { Name = "Performance Optimization", Deadline = "May 5, 2024", Status = "On Hold" }
+    };
+
+    private void MoveProjectUp(int index)
+    {
+        if (index > 0)
+        {
+            (projects[index], projects[index - 1]) = (projects[index - 1], projects[index]);
+        }
+    }
+
+    private void MoveProjectDown(int index)
+    {
+        if (index < projects.Count - 1)
+        {
+            (projects[index], projects[index + 1]) = (projects[index + 1], projects[index]);
+        }
+    }
+    
+}
